@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Share : MonoBehaviour
 {
     public void ShareGame()
     {
-        var shareSubject = "Hey, Play this Arcade. Get it from Playstore";
-        var shareMessage = "https://play.google.com/store/apps/details?id=";
+        var shareSubject = "text..."; //Your text
+        var shareMessage = "https://play.google.com/store/apps/details?id="; //Your link to the app
 
         if (!Application.isEditor)
         {
@@ -32,7 +29,7 @@ public class Share : MonoBehaviour
                 unity.GetStatic<AndroidJavaObject>("currentActivity");
             AndroidJavaObject chooser =
                 intentClass.CallStatic<AndroidJavaObject>
-                ("createChooser", intentObject, "Share your high score");
+                ("createChooser", intentObject, "text..."); //Your text
             currentActivity.Call("startActivity", chooser);
         }
     }
